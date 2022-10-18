@@ -8,7 +8,7 @@ serving = APIRouter()
 
 model = joblib.load('./api/model/Iris_model.pkl')
 
-@app.get("/predict")
+@serving.get("/predict")
 async def read_root():
     return {"Message": "Data를 Json 형식으로 넣어주세요"}
 
