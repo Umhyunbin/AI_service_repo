@@ -6,7 +6,7 @@ from api.model.model import IrisInput, IrisResponse
 
 serving = APIRouter()
 
-model = joblib.load('./model/Iris_model.pkl')
+model = joblib.load('./api/model/Iris_model.pkl')
 
 @app.get("/predict")
 async def read_root():
