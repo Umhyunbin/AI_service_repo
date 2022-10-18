@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iris-demo
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: iris-demo
+  template:
+    metadata:
+      labels:
+        app: iris-demo
+    spec:
+      containers:
+        - name: iris-container
+          image: djagusqls926/iris_service:1.0.0
+          resources:
+            requests:
+              cpu: 500m
+              memory: 500Mi
+          ports:
+            - containerPort: 8080
